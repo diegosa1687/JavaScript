@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        // faz sumir, faz aparecer e depois some em transparência
+        // o $('div') não pega os objetos div mesmo, pega um nó e a partir dele $('div')
+        // passa a ser um objeto dentro do JQuery, por isso ele tem essas funções
+        $('div').hide(5000).show(5000).fadeOut()
+        // com o get você consegue o próprio objeto, por isso ele n tem as outras funções
+        console.log($('div').get(0))
+        console.log($.isEmptyObject({ nome: null })) // false
+        console.log(jQuery.inArray(4, [1, 2, 3])) // -1 (retorna a posição)
+
+        $.fn.fundoVerde = function () {
+            // this faz referência ao elemento html que o jquery selecionou
+            this.css('background-color', 'green')
+            return this
+        }
+
+        // fundoVerde está sendo chamado pelo body, então a config
+        // css dentro de fundoVerde será aplicado ao body
+        $('body').fundoVerde().fadeOut(1000)
+    </script>
+</body>

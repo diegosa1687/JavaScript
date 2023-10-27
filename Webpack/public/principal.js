@@ -1,0 +1,1 @@
+(()=>{"use strict";const o=new class{cumprimentar(){console.log("Olá, boa tarde!!")}};console.log(o.cumprimentar())})();

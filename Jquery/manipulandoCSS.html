@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Manipulando CSS</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Manipulando CSS</h1>
+    <div id='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='div3'>3</div>
+    <div id='resultado'></div>
+    <script>
+        const fonte = $('#div1').css('font-family') // aqui tu só pega o estilo de fonte (Oswald, sans-serif)
+        $('#resultado').append(`Fonte é ${fonte}`)
+        $('#div1').css('font-size', '3em') // altera o font-size
+        // $('#div1').css('font-size', function () { return `${2 * 2}em` })
+
+        $('#div2').addClass('destaque') // add classe
+        const temClasse = $('#div2').hasClass('destaque') // pergunta se tem a classe
+        $('#resultado').append(`<br>Tem classe 'destaque'? ${temClasse ? 'sim' : 'não'}`)
+        
+        $('#div2').removeClass('destaque') // remove a classe
+        $('#div2').toggleClass('destaque') // se tem -> remove / se não tem -> adiciona
+        $('#div2').toggleClass('destaque')
+    </script>
+</body>
